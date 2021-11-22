@@ -72,7 +72,7 @@ $font-family-7: "DotGothic16", sans-serif;
         line-height: 1.5;
 
         .title {
-          font-size: 4.5rem;
+          font-size: 5rem;
           //   #devTitle {
           //     animation: devTitle 1s ease-in-out infinite;
 
@@ -146,8 +146,28 @@ $font-family-7: "DotGothic16", sans-serif;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    .cta-2 {
+      z-index: 4;
+      position: absolute;
+      bottom: 200px;
+
+      .cta-homesection {
+        height: 60px;
+        min-width: 250px;
+        box-shadow: 0px 5px 0px #fff;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: Fira Code;
+        font-weight: bold;
+        border-radius: 13px;
+        &:active {
+          box-shadow: 5px 5px 0px rgb(230, 4, 162);
+        }
+      }
+    }
     h1 {
-      font-family: $font-family-5;
+      font-family: $font-family-7;
       letter-spacing: 2px;
       font-weight: lighter;
       font-size: 2.5rem;
@@ -159,8 +179,7 @@ $font-family-7: "DotGothic16", sans-serif;
       img {
         display: none;
         opacity: 0;
-        transition: all 300ms ease-in-out;
-        position: absolute;
+        transition: all 30ms ease-in-out;
       }
       &:hover {
         img {
@@ -171,29 +190,129 @@ $font-family-7: "DotGothic16", sans-serif;
           height: 230px;
           opacity: 1;
           width: auto;
-          transition: all 300ms ease-in-out;
+          transition: all 30ms ease-in-out;
           transform: rotate(-10deg);
         }
       }
     }
 
     p {
-      font-family: $font-family-5;
+      font-family: Fira Code;
       letter-spacing: 2px;
       font-weight: lighter;
       font-size: 1.75rem;
       text-align: center;
       line-height: 1.5;
       width: 80%;
+      a {
+        color: #f0f;
+      }
 
       span:nth-child(1) {
-        color:#0f0f;
+        color: #0f0f;
       }
       span:nth-child(2) {
-        color:rgb(0, 183, 255);
+        color: rgb(0, 183, 255);
       }
       span:nth-child(3) {
-        color:rgb(217, 255, 0);
+        color: rgb(217, 255, 0);
+        img {
+          display: none;
+          opacity: 0;
+          transition: all 30ms ease-in-out;
+        }
+        &:hover {
+          color: rgb(0, 183, 255);
+          cursor: pointer;
+          img {
+            display: block;
+            position: absolute;
+            top: 240px;
+            height: 130px;
+            opacity: 1;
+            width: auto;
+            transition: all 30ms ease-in-out;
+            transform: rotate(-10deg);
+          }
+        }
+      }
+    }
+  }
+  .line {
+    height: 10px;
+    width: 80%;
+    border-top: 5px solid #fff;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-style: dashed;
+  }
+  .section-three {
+    height: 100vh;
+    width: 100%;
+  }
+}
+
+.TeamContainer {
+  height: auto;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: auto;
+  .team-title {
+    font-family: Fira Code;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1.5;
+    color: white;
+  }
+
+  .member-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .team-member {
+      height: auto;
+      width: auto;
+
+      box-shadow: 3px 9px 0px #f0f, -5px -8px 0px #0f0, 5px -12px 0px #ff0,
+        -5px 8px 0px #0ff;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+      padding: 10px;
+      text-align: center;
+
+      .member-photo {
+        height: 200px;
+        width: 200px;
+        border: 1px solid white;
+        border-radius: 50%;
+        overflow: hidden;
+        margin:10px;
+        .mp {
+          height: 100%;
+            transform:scale(1.25);
+        }
+
+      }
+      .member-details{
+
+        font-family: Space mono;
+
+        .desc{
+            width:400px;
+        }
       }
     }
   }
