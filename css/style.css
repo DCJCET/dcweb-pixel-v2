@@ -310,7 +310,7 @@ body {
 
 .TeamContainer {
   height: auto;
-  width: 80vw;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -374,8 +374,8 @@ body {
 }
 
 .TeamContainer .member-container .team-member .member-photo {
-  height: 200px;
-  width: 200px;
+  height: 170px;
+  width: 170px;
   border: 1px solid white;
   border-radius: 50%;
   overflow: hidden;
@@ -393,6 +393,6 @@ body {
 }
 
 .TeamContainer .member-container .team-member .member-details .desc {
-  width: 400px;
+  width: 370px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -255,7 +255,7 @@ $font-family-7: "DotGothic16", sans-serif;
 
 .TeamContainer {
   height: auto;
-  width: 80vw;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -294,24 +294,22 @@ $font-family-7: "DotGothic16", sans-serif;
       text-align: center;
 
       .member-photo {
-        height: 200px;
-        width: 200px;
+        height: 170px;
+        width: 170px;
         border: 1px solid white;
         border-radius: 50%;
         overflow: hidden;
-        margin:10px;
+        margin: 10px;
         .mp {
           height: 100%;
-            transform:scale(1.25);
+          transform: scale(1.25);
         }
-
       }
-      .member-details{
-
+      .member-details {
         font-family: Space mono;
 
-        .desc{
-            width:400px;
+        .desc {
+          width: 370px;
         }
       }
     }
