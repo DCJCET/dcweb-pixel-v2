@@ -26,5 +26,5 @@ function animatebg() {
     }
 
 }
-window.setInterval(animatebg, 1000);
+// window.setInterval(animatebg, 1000);
 console.log(words);

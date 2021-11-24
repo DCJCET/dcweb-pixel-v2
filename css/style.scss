@@ -10,7 +10,7 @@ html {
 }
 body {
   height: auto;
-  width: auto;
+  width: 100vw;
 
   box-sizing: border-box;
   background-color: #111111;
@@ -24,6 +24,57 @@ $font-family-4: "Rampart One", cursive;
 $font-family-5: "Space Mono", monospace;
 $font-family-6: "VT323", monospace;
 $font-family-7: "DotGothic16", sans-serif;
+
+.nav-center {
+  height: 80px;
+  width: 600px;
+
+  position: fixed;
+  left: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1b1b1b;
+  padding: 5px;
+  top: -10px;
+  box-shadow: 0px 0px 20px #000;
+  z-index: 99999;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 200px;
+    height: 30px;
+    // border: 1px solid #fff;
+  }
+
+  ul {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 10px;
+
+    li {
+      list-style: none;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background: #414141;
+        border-radius: 100px;
+      }
+      .nav-icon {
+      }
+    }
+  }
+}
 .container {
   min-height: 100vh;
   display: flex;
@@ -282,7 +333,7 @@ $font-family-7: "DotGothic16", sans-serif;
       height: auto;
       width: auto;
 
-      box-shadow: 3px 9px 0px #f0f, -5px -8px 0px #0f0, 5px -12px 0px #ff0,
+      box-shadow: 3px 9px 0px #ff00ff, -5px -8px 0px #0f0, 5px -12px 0px #ff0,
         -5px 8px 0px #0ff;
       color: white;
       display: flex;
