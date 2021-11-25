@@ -12,13 +12,25 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #111111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .nav-center {
   height: 80px;
-  width: 600px;
+  min-width: 600px;
   position: fixed;
-  left: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,20 +40,37 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #1b1b1b;
+  background: #272727;
   padding: 5px;
   top: -10px;
   -webkit-box-shadow: 0px 0px 20px #000;
           box-shadow: 0px 0px 20px #000;
   z-index: 99999;
+  top: -10%;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.nav-center:hover {
+  top: 0px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .nav-center:after {
   content: "";
   position: absolute;
   top: 100%;
-  width: 200px;
-  height: 30px;
+  margin: auto;
+  width: 100px;
+  height: 40px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background: #272727;
+  -webkit-box-shadow: 0px 20px 20px #000;
+          box-shadow: 0px 20px 20px #000;
 }
 
 .nav-center ul {
@@ -57,7 +86,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  top: 10px;
+  top: 5px;
 }
 
 .nav-center ul li {
@@ -73,11 +102,40 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 40px;
+  position: relative;
+}
+
+.nav-center ul li .logo {
+  height: 50px;
+  width: auto;
+}
+
+.nav-center ul li .nav-snack {
+  position: absolute;
+  color: white;
+  font-size: 1em;
+  font-family: "DotGothic16", sans-serif;
+  padding: 2px 5px 2px 5px;
+  text-align: center;
+  border-radius: 2px;
+  top: 0px;
+  opacity: 0;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  z-index: 9999999999999;
 }
 
 .nav-center ul li:hover {
   background: #414141;
   border-radius: 100px;
+}
+
+.nav-center ul li:hover .nav-snack {
+  top: 50px;
+  opacity: 1;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 .container {
@@ -134,6 +192,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  top: -30px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -196,8 +255,8 @@ body {
   font-family: "Flow Rounded", cursive;
   position: relative;
   z-index: 1;
-  opacity: 0.05;
-  text-align: left;
+  opacity: 0.1;
+  text-align: center;
   pointer-events: none;
 }
 
@@ -377,6 +436,7 @@ body {
 .TeamContainer {
   height: auto;
   width: 100vw;
+  margin-top: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -393,6 +453,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: auto;
+  margin-top: 30px;
 }
 
 .TeamContainer .team-title {
@@ -403,6 +464,14 @@ body {
   text-align: center;
   line-height: 1.5;
   color: white;
+}
+
+.TeamContainer p {
+  color: white;
+  width: 80%;
+  font-family: Fira Code;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
 }
 
 .TeamContainer .member-container {
@@ -417,48 +486,98 @@ body {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
 }
 
 .TeamContainer .member-container .team-member {
-  height: auto;
-  width: auto;
-  -webkit-box-shadow: 3px 9px 0px #ff00ff, -5px -8px 0px #0f0, 5px -12px 0px #ff0, -5px 8px 0px #0ff;
-          box-shadow: 3px 9px 0px #ff00ff, -5px -8px 0px #0f0, 5px -12px 0px #ff0, -5px 8px 0px #0ff;
-  color: white;
+  height: 300px;
+  min-width: auto;
+  max-width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  padding: 10px;
-  text-align: center;
-}
-
-.TeamContainer .member-container .team-member .member-photo {
-  height: 170px;
-  width: 170px;
-  border: 1px solid white;
-  border-radius: 50%;
-  overflow: hidden;
   margin: 10px;
 }
 
-.TeamContainer .member-container .team-member .member-photo .mp {
-  height: 100%;
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+.TeamContainer .member-container .team-member .photo-container {
+  height: 250px;
+  width: 250px;
+  margin: 10px;
+  overflow: hidden;
 }
 
-.TeamContainer .member-container .team-member .member-details {
-  font-family: Space mono;
+.TeamContainer .member-container .team-member .photo-container img {
+  width: 100%;
 }
 
-.TeamContainer .member-container .team-member .member-details .desc {
-  width: 370px;
+.TeamContainer .member-container .team-member .member-desc {
+  color: white;
+  width: auto;
+  margin: 10px;
+}
+
+.TeamContainer .member-container .team-member .member-desc .member-name {
+  font-family: "DotGothic16", sans-serif;
+  letter-spacing: 2px;
+  font-size: 2.75rem;
+  line-height: 0.5;
+}
+
+.TeamContainer .member-container .team-member .member-desc .member-role {
+  font-family: Fira Code;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  width: auto;
+  color: #f0f;
+}
+
+.TeamContainer .member-container .team-member .member-desc .member-notes {
+  width: 70%;
+  font-size: 1rem;
+}
+
+.TeamContainer .member-container .team-member .member-desc .member-social {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: -60px;
+}
+
+.TeamContainer .member-container .team-member .member-desc .member-social li {
+  font-size: 2rem;
+  margin: 20px;
+  color: white;
+}
+
+.TeamContainer .member-container .team-member .member-desc .member-social li a {
+  color: white;
+}
+
+footer {
+  height: auto;
+  padding: 10px;
+  color: white;
+  font-family: "DotGothic16", sans-serif;
+  font-size: 1.5rem;
+}
+
+footer p a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p a:hover {
+  text-decoration: underline;
+  color: #0f0;
 }
 /*# sourceMappingURL=style.css.map */

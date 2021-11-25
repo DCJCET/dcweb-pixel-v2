@@ -14,6 +14,10 @@ body {
 
   box-sizing: border-box;
   background-color: #111111;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
 $heading-font-1: "Geometri Outine", sans-serif;
@@ -24,28 +28,37 @@ $font-family-4: "Rampart One", cursive;
 $font-family-5: "Space Mono", monospace;
 $font-family-6: "VT323", monospace;
 $font-family-7: "DotGothic16", sans-serif;
-
+$nav-color: #272727;
 .nav-center {
   height: 80px;
-  width: 600px;
-
+  min-width: 600px;
   position: fixed;
-  left: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1b1b1b;
+  background: $nav-color;
   padding: 5px;
   top: -10px;
   box-shadow: 0px 0px 20px #000;
   z-index: 99999;
+  top: -10%;
+  transition: 0.2s ease-in-out;
+  transition-delay: 1s;
+  &:hover {
+    top: 0px;
+    transition: 0.2s ease-in-out;
+  }
   &:after {
     content: "";
     position: absolute;
     top: 100%;
-    width: 200px;
-    height: 30px;
-    // border: 1px solid #fff;
+    margin: auto;
+    width: 100px;
+    height: 40px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: $nav-color;
+    box-shadow: 0px 20px 20px #000;
   }
 
   ul {
@@ -56,7 +69,7 @@ $font-family-7: "DotGothic16", sans-serif;
     justify-content: space-around;
     align-items: center;
     position: relative;
-    top: 10px;
+    top: 5px;
 
     li {
       list-style: none;
@@ -65,12 +78,37 @@ $font-family-7: "DotGothic16", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-right: 40px;
+      position: relative;
+      .logo {
+        height: 50px;
+        width: auto;
+      }
+      .nav-snack {
+        position: absolute;
+
+        color: white;
+        font-size: 1em;
+        font-family: $font-family-7;
+
+        padding: 2px 5px 2px 5px;
+        text-align: center;
+        border-radius: 2px;
+
+        top: 0px;
+        opacity: 0;
+        transition: all 0.1s ease;
+        z-index: 9999999999999;
+      }
 
       &:hover {
         background: #414141;
         border-radius: 100px;
       }
-      .nav-icon {
+      &:hover .nav-snack {
+        top: 50px;
+        opacity: 1;
+        transition: all 0.1s ease;
       }
     }
   }
@@ -107,6 +145,7 @@ $font-family-7: "DotGothic16", sans-serif;
       width: 50%;
       height: 100%;
       display: flex;
+      top: -30px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -155,8 +194,8 @@ $font-family-7: "DotGothic16", sans-serif;
       font-family: $font-family-3;
       position: relative;
       z-index: 1;
-      opacity: 0.05;
-      text-align: left;
+      opacity: 0.1;
+      text-align: center;
       pointer-events: none;
     }
     a {
@@ -307,12 +346,14 @@ $font-family-7: "DotGothic16", sans-serif;
 .TeamContainer {
   height: auto;
   width: 100vw;
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
   margin: auto;
+  margin-top: 30px;
   .team-title {
     font-family: Fira Code;
     letter-spacing: 2px;
@@ -322,46 +363,96 @@ $font-family-7: "DotGothic16", sans-serif;
     line-height: 1.5;
     color: white;
   }
+  p {
+    color: white;
+    width: 80%;
+
+    font-family: Fira Code;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+  }
 
   .member-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    
 
     .team-member {
-      height: auto;
-      width: auto;
-
-      box-shadow: 3px 9px 0px #ff00ff, -5px -8px 0px #0f0, 5px -12px 0px #ff0,
-        -5px 8px 0px #0ff;
-      color: white;
+      height: 300px;
+      min-width: auto;
+      max-width: 70%;
+      // border: 1px solid #fff;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
+      margin: 10px;
 
-      position: relative;
-      padding: 10px;
-      text-align: center;
-
-      .member-photo {
-        height: 170px;
-        width: 170px;
-        border: 1px solid white;
-        border-radius: 50%;
-        overflow: hidden;
+      .photo-container {
+        height: 250px;
+        width: 250px;
         margin: 10px;
-        .mp {
-          height: 100%;
-          transform: scale(1.25);
+        overflow: hidden;
+        img {
+          width: 100%;
         }
       }
-      .member-details {
-        font-family: Space mono;
-
-        .desc {
-          width: 370px;
+      .member-desc {
+        color: white;
+        width: auto;
+        margin: 10px;
+        .member-name {
+          font-family: $font-family-7;
+          letter-spacing: 2px;
+          font-size: 2.75rem;
+          line-height: 0.5;
         }
+        .member-role {
+          font-family: Fira Code;
+          letter-spacing: 2px;
+          font-size: 1.25rem;
+          width: auto;
+          color: #f0f;
+        }
+        .member-notes {
+          width: 70%;
+          font-size: 1rem;
+        }
+        .member-social {
+          list-style-type: none;
+          display: flex;
+          justify-content: flex-start;
+          margin-left: -60px;
+
+          li {
+            font-size: 2rem;
+            margin: 20px;
+            color: white;
+            a {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  height: auto;
+  padding: 10px;
+  color: white;
+  font-family: $font-family-7;
+  font-size: 1.5rem;
+  p {
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        color: #0f0;
       }
     }
   }
