@@ -25,7 +25,15 @@ function animatebg() {
     title.innerHTML = title.innerHTML.replace(word, word_html);
   }
 }
-window.setInterval(animatebg, 15000);
+window.setInterval(animatebg, 12000);
 console.log(words);
 
+
+// js program to check for palindrome of numbers
+function palindrome(str) {
+  var re = /[\W_]/g;
+  var lowRegStr = str.toLowerCase().replace(re, '');
+  var reverseStr = lowRegStr.split('').reverse().join('');
+  return reverseStr === lowRegStr;
+}
 
