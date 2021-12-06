@@ -580,6 +580,18 @@ body {
   border-radius: 10px;
   background: #2b2b2b;
   padding: 20px;
+  position: relative;
+}
+
+.TeamContainer .member-container .member::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 0;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  background-color: #111111;
 }
 
 .TeamContainer .member-container .member .member-photo-container {
@@ -662,6 +674,14 @@ body {
   -webkit-box-shadow: 5px 5px #fff;
           box-shadow: 5px 5px #fff;
   border-radius: 10px;
+}
+
+.TeamContainer .member-container .member .socials:nth-child(1) {
+  background: #00d9ff;
+}
+
+.TeamContainer .member-container .member .socials:nth-child(2) {
+  background: #d9ff00;
 }
 
 .TeamContainer .member-container .member .socials:hover {

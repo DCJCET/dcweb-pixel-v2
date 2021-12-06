@@ -213,7 +213,6 @@ $nav-color: #272727;
       z-index: 4;
       position: absolute;
       bottom: 240px;
-     
 
       .cta-homesection {
         height: 60px;
@@ -448,10 +447,22 @@ $nav-color: #272727;
       border-radius: 10px;
       background: #2b2b2b;
       padding: 20px;
+      position: relative;
+
       // justify-content: center;
       // align-items: center;
       // flex-direction: column;
       // display: flex;
+      &::after {
+        content: "";
+        position: absolute;
+        right:0px;
+        top:0;
+        border-radius: 5px;
+        height: 30px;
+        width: 30px;
+         background-color: #111111;
+      }
 
       .member-photo-container {
         height: 150px;
@@ -513,6 +524,13 @@ $nav-color: #272727;
         background: rgb(255, 0, 221);
         box-shadow: 5px 5px #fff;
         border-radius: 10px;
+
+        &:nth-child(1) {
+          background: rgb(0, 217, 255);
+        }
+        &:nth-child(2) {
+          background: rgb(217, 255, 0);
+        }
 
         &:hover {
           box-shadow: 0px 0px #fff;
